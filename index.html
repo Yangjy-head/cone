@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>코딩네컷</title>
-</head>
 <style>
-          /* 이서윤체 폰트 적용을 위한 코드 */
-          @font-face {
+      /* 이서윤체 폰트 적용을 위한 코드 */
+      @font-face {
         font-family: "LeeSeoyun";
         src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
           format("woff");
@@ -16,58 +15,80 @@
         font-style: normal;
       }
 
+
       /* body태그 자체에 css 요소 부여 */
-    .body{
+      body {
         font-family: "LeeSeoyun";
         margin: 0;
         display: flex;
         justify-content: center;
-        background-image: url(img/background.png);
-    }
-    .container{
+        background-image: url("img/background.png");
+      }
+
+
+      /*  */
+      .container {
         width: 390px;
-        height: 100%;
         background-color: #ff9d73;
-    }
-    .photos{
+        height: 100%;
+      }
+
+
+      .photos {
         margin-top: 30px;
-    }
-    .photo-frame{
+      }
+
+
+      .photo-frame {
         background-color: white;
         margin: 15px 20px;
         height: 200px;
         background-size: cover;
         position: relative;
-        cursor: pointer; /* 마우스가 사진 위로 올라가면 포인터 아이콘으로 바뀌도록 */
-    }
-    .footer{
+      }
+
+
+      /* 하단 영역 스타일링 */
+      .footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .f-title{
-        color: white;
+      }
+
+
+      .f-title {
         font-size: 25px;
         font-weight: 900;
-    }
-    .f-date{
         color: white;
+      }
+      .f-date {
         font-size: 15px;
         font-weight: 500;
-    }
-    #image1{
-        background-image: url(img/img1.png);
-    }
-    #image2{
-        background-image: url(img/img2.png);
-    }
-    #image3{
-        background-image: url(img/img3.png);
-    }
-    #image4{
-        background-image: url(img/img4.png);
-    }
-    .photo-description{
+        color: white;
+      }
+
+
+      #image1 {
+        background-image: url("img/img1.png");
+      }
+
+
+      #image2 {
+        background-image: url("img/img2.png");
+      }
+
+
+      #image3 {
+        background-image: url("img/img3.png");
+      }
+
+
+      #image4 {
+        background-image: url("img/img4.png");
+      }
+
+
+      .photo-description {
         color: white;
         background-color: black;
         width: fit-content;
@@ -78,19 +99,25 @@
         bottom: 0;
         transform: translate(-50%);
         left: 50%;
-        opacity: 0; /*  초반에 페이지 열릴 때 기본으로 안보이게 하기 위한 설정이에요 */
-    }
-    .video{
+      }
+
+
+	  .video {
         width: 100%;
         height: 100%;
-    }
-    .showtext{
-        opacity: 0;
-    }
-    .hidetext{
-        opacity: 1;
-        transition: opacity 0.5s linear;
-    }
+      }
+      /* opacity : 투명도를 의미해요! opacity는 1에 가까워 질 수록 불투명하다. 즉 다 보인다. */
+.showText {
+	opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+
+/* opacity : 투명도를 의미해요! opacity는 0에 가까워 질 수록 투명하다. 즉 안보인다. */
+/* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */
+.hideText {
+	opacity: 0;
+}
 </style>
 <script>
     // 텍스트가 보여지는 기능
@@ -131,9 +158,10 @@ function alertText(number) {
 	alert(`${number}번째 추억이에요! 눌러주셔서 감사합니다 :)`);
 }
 </script>
+</head>
 <body>
     <div class="container">
-        <div class="phptos">
+        <div class="photos">
             <div id="image1" class="photo-frame"
             onmouseover="showText(1)"
             onmouseout="hideText(1)"
